@@ -1,0 +1,314 @@
+body {
+  height: 100vh;  /* Full height */
+  margin: 0;      /* Remove default margin */
+  display: flex;  /* Activate flexbox */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  background-color: #1e1e1e;  /* Background color */
+}
+
+.rectangle {
+  align-self: center;
+  align-items: center;
+  background-color: rgba(40, 40, 40, 0.8); /* Mildly transparent grey */
+  border-radius: 20px; /* Smooth round edges */
+  border: 2px solid transparent;
+  box-shadow: 0 0 20px 5px rgba(240, 149, 185, 0.7); /* Deep reddish-pink glow */
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  animation: float 3s ease-in-out infinite; /* Gentle floating effect */
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+h1 {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 75%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px; /* Smooth round edges */
+  border-color: antiquewhite;
+
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.enter-button {
+  width: 50%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px; /* Smooth round edges */
+  background-color:  #ffbad4; /* Deep pink */
+  color: #040000;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enter-button:hover {
+  background-color: #884a62; /* Slightly darker pink on hover */
+}
+
+.hint {
+  color: #eed8e1; /* Deep pink */
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Heart Animation Styles */
+.heart-container {
+  position: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.heart {
+  transition: all 0.s ease-out;
+}
+
+/* Input box */
+.input-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Typewriter effect */
+.input-box p {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgb(0, 0, 0); /* Cursor effect */
+  animation: blinkCursor 0.75s steps(1) infinite;
+}
+
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+/* Input field */
+.input-field-fav {
+  padding: 8px;
+  width:95%;
+  border: 0.5px;
+  border-radius: 10px;
+  color:  #c63c68; 
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 5px;
+ 
+}
+
+/* Girl button */
+.girl-button {
+  padding: 8px 16px;
+  background-color: rgb(251, 95, 89);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.girl-button:hover {
+  background-color: rgb(230, 70, 70);
+}
+
+/* Button shake effect */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.girl-button.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Sunflowers Container */
+.sunflowers-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure sunflowers don't interfere with clicks */
+}
+
+/* Sunflower */
+.sunflower {
+  position: absolute;
+  top: -50px; /* Start off-screen */
+  left: 50%;  /* Default placement */
+  font-size: 2rem;
+  animation: fall 11s linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    top: -50px;  /* Start above the screen */
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;  /* Fall beyond the bottom of the screen */
+    opacity: 0;  /* Disappear smoothly */
+  }
+}
+
+/* Container for the message box */
+.message-box {
+  position: fixed;
+  top: -100px; /* Start off-screen above */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(243, 243, 113);
+  color: rgb(3, 3, 3);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  animation: floatInOut 15s ease-in-out forwards;
+  opacity: 0;
+}
+/* Keyframes for floating in and out */
+@keyframes floatInOut {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  65% {
+    top: 50px; /* Float to this position */
+    opacity: 1;
+  }
+  88% {
+    top: 50px;
+    opacity: 1;
+  }
+  100% {
+    top: -100px;
+    opacity: 0;
+  }
+}
+
+/* Buttons container */
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.appc {
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/question.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url('./question.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+}
+
+.action-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
